@@ -1,10 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
+    const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    const activatedRouteSpy = jasmine.createSpyObj('ActivatedRoute', [], { snapshot: {} });
+
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [App, TranslateModule.forRoot()],
+      providers: [
+        { provide: Router, useValue: routerSpy },
+        { provide: ActivatedRoute, useValue: activatedRouteSpy }
+      ]
     }).compileComponents();
   });
 
@@ -18,6 +28,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, spacehub');
+    expect(compiled.querySelector('app-navbar')).toBeTruthy();
   });
 });
