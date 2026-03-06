@@ -1,0 +1,187 @@
+{
+  "NAV": {
+    "SERVICES": "Services",
+    "PRICING": "Tarifs",
+    "CONTACT": "Contact",
+    "LOGIN": "Connexion",
+    "REGISTER": "S'inscrire",
+    "CENTERS": "Centres",
+    "MY_BOOKINGS": "Mes Réservations",
+    "LOGOUT": "Déconnexion"
+  },
+  "LANDING": {
+    "HERO_BADGE": "L'Avenir du Travail",
+    "HERO_TITLE": "Travaillez Mieux chez <span>AIHub</span>",
+    "HERO_SUBTITLE": "Des espaces de coworking premium conçus pour les innovateurs, créateurs et équipes. Réservez votre espace idéal aujourd'hui.",
+    "HERO_SERVICES_BTN": "Nos Services",
+    "STAT_MEMBERS": "Membres",
+    "STAT_SPACES": "Espaces",
+    "STAT_CITIES": "Villes",
+    "BOOK_NOW": "Explorer les Espaces",
+    "SERVICES_TAG": "Ce Que Nous Offrons",
+    "SERVICES_TITLE": "Nos <span>Services</span>",
+    "SERVICES_DESC": "Tout ce dont vous avez besoin pour travailler, créer et grandir — sous un même toit.",
+    "CENTERS_TAG": "Nos Emplacements",
+    "CENTERS_TITLE": "Centres <span>Vedettes</span>",
+    "CENTERS_DESC": "Découvrez nos hubs de coworking premium à travers le Maroc.",
+    "CENTER_CASA_DESC": "Notre centre phare au cœur du quartier des affaires de Casablanca. 3 étages d'espaces premium.",
+    "CENTER_RABAT_DESC": "Espace de travail moderne près de la capitale administrative. Idéal pour les professionnels.",
+    "CENTER_MARRAKECH_DESC": "Espace créatif inspiré par la culture vibrante de Marrakech. Parfait pour les équipes créatives.",
+    "VIEW_SPACES": "Voir les Espaces",
+    "VIEW_ALL_CENTERS": "Voir Tous les Centres",
+    "PRICING_TAG": "Tarifs Transparents",
+    "PRICING_TITLE": "Tarifs <span>Simples</span>",
+    "PRICING_DESC": "Pas de frais cachés. Choisissez le plan qui correspond à vos besoins.",
+    "TESTIMONIALS_TAG": "Membres Satisfaits",
+    "CONTACT_TAG": "Contactez-Nous",
+    "CONTACT_TITLE": "Prêt à Rejoindre <span>AIHub ?</span>",
+    "GET_STARTED": "Commencer Gratuitement",
+    "TESTIMONIAL_1": "AIHub a transformé la façon dont notre équipe travaille. Les espaces sont magnifiques et la communauté est incroyable.",
+    "TESTIMONIAL_2": "Meilleure expérience de coworking au Maroc. WiFi rapide, excellent café et opportunités de networking incroyables.",
+    "TESTIMONIAL_3": "Les bureaux privés sont parfaits pour notre équipe. Environnement professionnel à un prix très raisonnable.",
+    "ROLE_DESIGNER": "Designer Produit",
+    "ROLE_FOUNDER": "Fondateur de Startup",
+    "ROLE_TECH_LEAD": "Tech Lead",
+    "SERVICES": {
+      "OPEN_SPACE_TITLE": "Bureaux Flexibles en Open Space",
+      "OPEN_SPACE_DESC": "Boostez votre productivité dans notre espace ouvert, avec des postes de travail flexibles et un environnement inspirant.",
+      "PRIVATE_OFFICE_TITLE": "Bureaux Équipés Tout Confort",
+      "PRIVATE_OFFICE_DESC": "Profitez d'un bureau entièrement équipé avec mobilier, internet haut débit, impression et espaces communs.",
+      "MEETING_ROOMS_TITLE": "Salles de Conférence",
+      "MEETING_ROOMS_DESC": "Utilisez nos salles de conférence de pointe équipées des dernières technologies.",
+      "CAFETERIA_TITLE": "Cafétéria & Détente",
+      "CAFETERIA_DESC": "Faites une pause dans notre cafétéria où vous pourrez profiter de rafraîchissements et faire du networking.",
+      "PODCAST_TITLE": "Studio Podcast",
+      "PODCAST_DESC": "Équipement d'enregistrement professionnel pour votre prochaine production audio ou vidéo.",
+      "TRAINING_TITLE": "Formation & Ateliers",
+      "TRAINING_DESC": "Espaces dédiés pour les ateliers, séminaires et le développement professionnel.",
+      "DOMICILIATION_TITLE": "Domiciliation",
+      "DOMICILIATION_DESC": "Adresse commerciale premium et gestion du courrier pour votre entreprise.",
+      "INCUBATOR_TITLE": "Incubateur & Accélérateur",
+      "INCUBATOR_DESC": "Programmes et accompagnement pour aider votre startup à se développer rapidement."
+    },
+    "TESTIMONIALS": {
+      "TITLE": "Ce Que Disent Nos Clients"
+    },
+    "CONTACT": {
+      "READY_TITLE": "Prêt à rejoindre le Hub ?",
+      "READY_SUBTITLE": "Rejoignez la communauté la plus innovante de développeurs et passionnés de tech."
+    },
+    "FOOTER": {
+      "COPYRIGHT": "© 2024 AIHub. L'espace de coworking moderne pour la tech & l'IA."
+    }
+  },
+  "PRICING": {
+    "TITLE": "Nos <span>Tarifs</span>",
+    "FROM": "À partir de",
+    "PER_HOUR": "/ heure",
+    "TIERS": {
+      "OPEN_SPACE": "Open Space",
+      "PRIVATE_OFFICE": "Bureau Privé",
+      "CONFERENCE_ROOM": "Salle de Conférence"
+    },
+    "FEATURES": {
+      "DAY_100": "Jour 100 DH",
+      "WEEK_650": "Semaine 650 DH",
+      "MONTH_2500": "Mois 2,500 DH",
+      "YEAR_27600": "An 27,600 DH",
+      "ACCESS_24_7": "Accès 24/7",
+      "DAY_350": "Jour 350 DH",
+      "WEEK_1000": "Semaine 1,000 DH",
+      "MONTH_4000": "Mois 4,000 DH",
+      "PRIVATE_SPACE": "Espace Privé",
+      "DAY_400": "Jour 400 DH",
+      "WEEK_2000": "Semaine 2,000 DH",
+      "MONTH_7000": "Mois 7,000 DH",
+      "YEAR_78000": "An 78,000 DH"
+    },
+    "RESERVE": "Réserver"
+  },
+  "BOOKING": {
+    "TITLE": "Réserver votre <span>Espace</span>",
+    "SPACE": "ESPACE",
+    "CAPACITY": "CAPACITÉ",
+    "PEOPLE": "Personnes",
+    "RATE": "TARIF",
+    "START_DATE": "Date de début",
+    "START_TIME": "Heure de début",
+    "END_DATE": "Date de fin",
+    "END_TIME": "Heure de fin",
+    "TOTAL_PRICE": "Prix Total",
+    "CONFIRM": "Confirmer la Réservation",
+    "SELECT_TIME": "Choisir votre <span>Créneau</span>",
+    "AVAILABLE": "Disponible",
+    "BUSY": "Occupé",
+    "SELECTED_DURATION": "Durée Sélectionnée",
+    "DATE": "Date de Réservation"
+  },
+  "BOOKINGS": {
+    "TITLE": "Mes <span>Réservations</span>",
+    "SUBTITLE": "Gérez vos réservations et consultez votre historique.",
+    "NEW_BOOKING": "Nouvelle Réservation",
+    "PERIOD": "PÉRIODE",
+    "FROM": "DU",
+    "TO": "AU",
+    "TOTAL": "PRIX TOTAL",
+    "EMPTY": "Vous n'avez pas encore de réservations.",
+    "BROWSE": "Parcourir les centres",
+    "LOADING": "Chargement...",
+    "COL_STATUS": "Statut",
+    "BTN_CANCEL": "ANNULER"
+  },
+  "CATALOGUE": {
+    "TITLE": "Découvrez nos <span>Hubs</span>",
+    "SUBTITLE": "Explorez nos espaces innovants et rejoignez la communauté.",
+    "SEARCH_PLACEHOLDER": "Rechercher par nom de centre ou description...",
+    "CITY_ALL": "Toutes les Villes",
+    "NO_RESULTS": "Aucun centre trouvé pour votre recherche.",
+    "BACK_LINK": "Retour aux centres",
+    "AVAILABLE_SPACES": "Espaces disponibles",
+    "PEOPLE": "Personnes",
+    "NO_SPACES": "Aucun espace configuré pour ce centre actuellement."
+  },
+  "AUTH": {
+    "LOGIN_TITLE": "Bon Retour <span>parmi nous</span>",
+    "LOGIN_SUBTITLE": "Connectez-vous pour gérer votre espace et vos réservations.",
+    "REGISTER_TITLE": "Créer un <span>Compte</span>",
+    "REGISTER_SUBTITLE": "Rejoignez notre communauté de coworkers.",
+    "EMAIL": "E-mail",
+    "PASSWORD": "Mot de passe",
+    "FULL_NAME": "Nom Complet",
+    "HAS_ACCOUNT": "Déjà un compte ?",
+    "NO_ACCOUNT": "Pas encore de compte ?",
+    "SIGN_IN": "Se Connecter",
+    "SIGN_UP": "S'inscrire",
+    "REMEMBER_ME": "Se souvenir de moi",
+    "FORGOT_PASSWORD": "Mot de passe oublié ?"
+  },
+  "ERRORS": {
+    "AUTH_FAILED": "Échec de la connexion. Veuillez vérifier vos identifiants.",
+    "BOOKING_CONFLICT": "Cet espace est déjà réservé pour la période sélectionnée.",
+    "REQUIRED": "Ce champ est obligatoire",
+    "INVALID_EMAIL": "Adresse e-mail invalide",
+    "SERVER_ERROR": "Une erreur serveur est survenue. Veuillez réessayer plus tard."
+  },
+  "SUCCESS": {
+    "REGISTERED": "Compte créé avec succès ! Vous pouvez maintenant vous connecter.",
+    "BOOKING_CREATED": "Réservation créée avec succès !"
+  },
+  "STATUS": {
+    "PENDING": "En attente",
+    "CONFIRMED": "Confirmée",
+    "CANCELLED": "Annulée",
+    "COMPLETED": "Terminée"
+  },
+  "REVIEW": {
+    "TITLE": "Avis des Utilisateurs",
+    "EMPTY": "Aucun avis pour le moment. Soyez le premier à partager votre expérience !",
+    "SHARE_EXPERIENCE": "Partagez votre expérience",
+    "COMMENT_PLACEHOLDER": "Comment s'est passé votre séjour ? (Optionnel)",
+    "CANCEL": "Annuler",
+    "POST": "Publier l'Avis",
+    "SUBMITTING": "Envoi en cours...",
+    "REPORT": "Signaler comme inapproprié",
+    "REPORT_CONFIRM": "Signaler cet avis comme inapproprié ?",
+    "UNDER_REVIEW": "En cours d'examen"
+  }
+}

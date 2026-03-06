@@ -1,4 +1,4 @@
-package com.spacehub.backend.controller;
+package com.aihub.backend.controller;
 
 import java.util.Map;
 
