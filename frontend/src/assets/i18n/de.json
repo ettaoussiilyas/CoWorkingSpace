@@ -1,0 +1,187 @@
+{
+  "NAV": {
+    "SERVICES": "Dienste",
+    "PRICING": "Preise",
+    "CONTACT": "Kontakt",
+    "LOGIN": "Anmelden",
+    "REGISTER": "Registrieren",
+    "CENTERS": "Zentren",
+    "MY_BOOKINGS": "Meine Buchungen",
+    "LOGOUT": "Abmelden"
+  },
+  "LANDING": {
+    "HERO_BADGE": "Die Zukunft der Arbeit",
+    "HERO_TITLE": "Arbeiten Sie smarter bei <span>AIHub</span>",
+    "HERO_SUBTITLE": "Premium-Coworking-Spaces für Innovatoren, Kreative und Teams. Buchen Sie Ihren perfekten Arbeitsplatz noch heute.",
+    "HERO_SERVICES_BTN": "Unsere Dienste",
+    "STAT_MEMBERS": "Mitglieder",
+    "STAT_SPACES": "Räume",
+    "STAT_CITIES": "Städte",
+    "BOOK_NOW": "Räume Entdecken",
+    "SERVICES_TAG": "Was Wir Anbieten",
+    "SERVICES_TITLE": "Unsere <span>Dienste</span>",
+    "SERVICES_DESC": "Alles, was Sie zum Arbeiten, Erschaffen und Wachsen brauchen — unter einem Dach.",
+    "CENTERS_TAG": "Unsere Standorte",
+    "CENTERS_TITLE": "Ausgewählte <span>Zentren</span>",
+    "CENTERS_DESC": "Entdecken Sie unsere Premium-Coworking-Hubs in ganz Marokko.",
+    "CENTER_CASA_DESC": "Unser Flaggschiff-Zentrum im Herzen des Geschäftsviertels von Casablanca. 3 Etagen Premium-Workspace.",
+    "CENTER_RABAT_DESC": "Moderner Arbeitsplatz nahe der Verwaltungshauptstadt. Ideal für Fachleute.",
+    "CENTER_MARRAKECH_DESC": "Kreativer Arbeitsplatz inspiriert von der lebendigen Kultur Marrakesch. Perfekt für kreative Teams.",
+    "VIEW_SPACES": "Räume Ansehen",
+    "VIEW_ALL_CENTERS": "Alle Zentren Ansehen",
+    "PRICING_TAG": "Transparente Preise",
+    "PRICING_TITLE": "Einfache <span>Preise</span>",
+    "PRICING_DESC": "Keine versteckten Gebühren. Wählen Sie den Plan, der zu Ihnen passt.",
+    "TESTIMONIALS_TAG": "Zufriedene Mitglieder",
+    "CONTACT_TAG": "Kontakt",
+    "CONTACT_TITLE": "Bereit <span>AIHub</span> beizutreten?",
+    "GET_STARTED": "Kostenlos Starten",
+    "TESTIMONIAL_1": "AIHub hat die Art und Weise, wie unser Team arbeitet, verändert. Die Räume sind wunderschön und die Community ist unglaublich.",
+    "TESTIMONIAL_2": "Beste Coworking-Erfahrung in Marokko. Schnelles WLAN, großartiger Kaffee und erstaunliche Networking-Möglichkeiten.",
+    "TESTIMONIAL_3": "Die Privatbüros sind perfekt für unser Team. Professionelles Umfeld zu einem sehr vernünftigen Preis.",
+    "ROLE_DESIGNER": "Produktdesignerin",
+    "ROLE_FOUNDER": "Startup-Gründer",
+    "ROLE_TECH_LEAD": "Tech Lead",
+    "SERVICES": {
+      "OPEN_SPACE_TITLE": "Flexible Schreibtische im Großraumbüro",
+      "OPEN_SPACE_DESC": "Steigern Sie Ihre Produktivität in unserem offenen Arbeitsbereich mit flexiblen Arbeitsplätzen und einer inspirierenden Umgebung.",
+      "PRIVATE_OFFICE_TITLE": "Möblierte Büros mit Ausstattung",
+      "PRIVATE_OFFICE_DESC": "Genießen Sie ein komplett ausgestattetes Büro mit Möbeln, High-Speed-Internet, Druckservice und Gemeinschaftsbereichen.",
+      "MEETING_ROOMS_TITLE": "Konferenzräume",
+      "MEETING_ROOMS_DESC": "Nutzen Sie unsere hochmodernen Konferenzräume, die mit der neuesten Technologie ausgestattet sind.",
+      "CAFETERIA_TITLE": "Cafeteria zur Entspannung",
+      "CAFETERIA_DESC": "Machen Sie eine Pause in unserer Cafeteria, wo Sie Erfrischungen genießen und netzwerken können.",
+      "PODCAST_TITLE": "Podcast-Studio",
+      "PODCAST_DESC": "Professionelle Aufnahmeausrüstung für Ihre nächste Audio- oder Videoproduktion.",
+      "TRAINING_TITLE": "Wissen & Training",
+      "TRAINING_DESC": "Speziell eingerichtete Räume für Workshops, Seminare und Weiterbildungen.",
+      "DOMICILIATION_TITLE": "Geschäftsadresse",
+      "DOMICILIATION_DESC": "Premium-Geschäftsadresse und Postbearbeitung für Ihr Unternehmen.",
+      "INCUBATOR_TITLE": "Inkubator-Beschleuniger",
+      "INCUBATOR_DESC": "Programme und Unterstützung, damit Ihr Startup schnell wachsen und skalieren kann."
+    },
+    "TESTIMONIALS": {
+      "TITLE": "Was unsere Kunden sagen"
+    },
+    "CONTACT": {
+      "READY_TITLE": "Bereit dem Hub beizutreten?",
+      "READY_SUBTITLE": "Treten Sie der innovativsten Community von Entwicklern und Tech-Enthusiasten bei."
+    },
+    "FOOTER": {
+      "COPYRIGHT": "© 2024 AIHub. Der moderne Coworking-Space für Tech & KI."
+    }
+  },
+  "PRICING": {
+    "TITLE": "Unsere <span>Preise</span>",
+    "FROM": "Ab",
+    "PER_HOUR": "/ Stunde",
+    "TIERS": {
+      "OPEN_SPACE": "Open Space",
+      "PRIVATE_OFFICE": "Privatbüro",
+      "CONFERENCE_ROOM": "Konferenzraum"
+    },
+    "FEATURES": {
+      "DAY_100": "Tag 100 DH",
+      "WEEK_650": "Woche 650 DH",
+      "MONTH_2500": "Monat 2.500 DH",
+      "YEAR_27600": "Jahr 27.600 DH",
+      "ACCESS_24_7": "24/7 Zugang",
+      "DAY_350": "Tag 350 DH",
+      "WEEK_1000": "Woche 1.000 DH",
+      "MONTH_4000": "Monat 4.000 DH",
+      "PRIVATE_SPACE": "Privates Büro",
+      "DAY_400": "Tag 400 DH",
+      "WEEK_2000": "Woche 2.000 DH",
+      "MONTH_7000": "Monat 7.000 DH",
+      "YEAR_78000": "Jahr 78.000 DH"
+    },
+    "RESERVE": "Jetzt buchen"
+  },
+  "BOOKING": {
+    "TITLE": "Ihren <span>Arbeitsbereich</span> reservieren",
+    "SPACE": "RAUM",
+    "CAPACITY": "KAPAZITÄT",
+    "PEOPLE": "Personen",
+    "RATE": "PREIS",
+    "START_DATE": "Startdatum",
+    "START_TIME": "Startzeit",
+    "END_DATE": "Enddatum",
+    "END_TIME": "Endzeit",
+    "TOTAL_PRICE": "Gesamtpreis",
+    "CONFIRM": "Buchung Bestätigen",
+    "SELECT_TIME": "Zeitfenster <span>Wählen</span>",
+    "AVAILABLE": "Verfügbar",
+    "BUSY": "Belegt",
+    "SELECTED_DURATION": "Ausgewählte Dauer",
+    "DATE": "Buchungsdatum"
+  },
+  "BOOKINGS": {
+    "TITLE": "Meine <span>Buchungen</span>",
+    "SUBTITLE": "Verwalten Sie Ihre Reservierungen und sehen Sie Ihren Verlauf.",
+    "NEW_BOOKING": "Neue Buchung",
+    "PERIOD": "ZEITRAUM",
+    "FROM": "VON",
+    "TO": "BIS",
+    "TOTAL": "GESAMTPREIS",
+    "EMPTY": "Sie haben noch keine Buchungen.",
+    "BROWSE": "Zentren durchsuchen",
+    "LOADING": "Laden...",
+    "COL_STATUS": "Status",
+    "BTN_CANCEL": "STORNIEREN"
+  },
+  "CATALOGUE": {
+    "TITLE": "Entdecken Sie unsere <span>Hubs</span>",
+    "SUBTITLE": "Erkennen Sie unsere innovativen Räume und treten Sie der Community bei.",
+    "SEARCH_PLACEHOLDER": "Suche nach Zentrum oder Beschreibung...",
+    "CITY_ALL": "Alle Städte",
+    "NO_RESULTS": "Keine Zentren für Ihre Suche gefunden.",
+    "BACK_LINK": "Zurück zu den Zentren",
+    "AVAILABLE_SPACES": "Verfügbare Plätze",
+    "PEOPLE": "Personen",
+    "NO_SPACES": "Derzeit sind für dieses Zentrum keine Räume konfiguriert."
+  },
+  "AUTH": {
+    "LOGIN_TITLE": "Willkommen <span>Zurück</span>",
+    "LOGIN_SUBTITLE": "Melden Sie sich an, um Ihren Arbeitsbereich zu verwalten.",
+    "REGISTER_TITLE": "Konto <span>Erstellen</span>",
+    "REGISTER_SUBTITLE": "Treten Sie unserer Coworking-Community bei.",
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Passwort",
+    "FULL_NAME": "Vollständiger Name",
+    "HAS_ACCOUNT": "Haben Sie bereits ein Konto?",
+    "NO_ACCOUNT": "Noch kein Konto?",
+    "SIGN_IN": "Anmelden",
+    "SIGN_UP": "Registrieren",
+    "REMEMBER_ME": "Angemeldet bleiben",
+    "FORGOT_PASSWORD": "Passwort vergessen?"
+  },
+  "ERRORS": {
+    "AUTH_FAILED": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Daten.",
+    "BOOKING_CONFLICT": "Dieser Platz ist bereits für diesen Zeitraum reserviert.",
+    "REQUIRED": "Dieses Feld ist erforderlich",
+    "INVALID_EMAIL": "Ungültige E-Mail-Adresse",
+    "SERVER_ERROR": "Ein Serverfehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+  },
+  "SUCCESS": {
+    "REGISTERED": "Konto erfolgreich erstellt! Sie können sich jetzt anmelden.",
+    "BOOKING_CREATED": "Buchung erfolgreich erstellt!"
+  },
+  "STATUS": {
+    "PENDING": "Ausstehend",
+    "CONFIRMED": "Bestätigt",
+    "CANCELLED": "Storniert",
+    "COMPLETED": "Abgeschlossen"
+  },
+  "REVIEW": {
+    "TITLE": "Nutzerbewertungen",
+    "EMPTY": "Noch keine Bewertungen. Seien Sie der Erste!",
+    "SHARE_EXPERIENCE": "Teilen Sie Ihre Erfahrung",
+    "COMMENT_PLACEHOLDER": "Wie war Ihr Aufenthalt? (Optional)",
+    "CANCEL": "Abbrechen",
+    "POST": "Bewertung Veröffentlichen",
+    "SUBMITTING": "Wird gesendet...",
+    "REPORT": "Als unangemessen melden",
+    "REPORT_CONFIRM": "Diese Bewertung als unangemessen melden?",
+    "UNDER_REVIEW": "Wird überprüft"
+  }
+}

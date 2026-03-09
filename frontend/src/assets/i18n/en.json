@@ -1,0 +1,197 @@
+{
+  "NAV": {
+    "SERVICES": "Services",
+    "PRICING": "Pricing",
+    "CONTACT": "Contact",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "CENTERS": "Centers",
+    "MY_BOOKINGS": "My Bookings",
+    "LOGOUT": "Logout"
+  },
+  "LANDING": {
+    "HERO_BADGE": "The Future of Work",
+    "HERO_TITLE": "Work Smarter at <span>AIHub</span>",
+    "HERO_SUBTITLE": "Premium coworking spaces designed for innovators, creators, and teams. Book your perfect workspace today.",
+    "HERO_SERVICES_BTN": "Our Services",
+    "STAT_MEMBERS": "Members",
+    "STAT_SPACES": "Spaces",
+    "STAT_CITIES": "Cities",
+    "BOOK_NOW": "Explore Spaces",
+    "SERVICES_TAG": "What We Offer",
+    "SERVICES_TITLE": "Our <span>Services</span>",
+    "SERVICES_DESC": "Everything you need to work, create, and grow — all under one roof.",
+    "CENTERS_TAG": "Our Locations",
+    "CENTERS_TITLE": "Featured <span>Centers</span>",
+    "CENTERS_DESC": "Discover our premium coworking hubs across Morocco.",
+    "CENTER_CASA_DESC": "Our flagship center in the heart of Casablanca's business district. 3 floors of premium workspace.",
+    "CENTER_RABAT_DESC": "Modern workspace near the administrative capital. Ideal for government and tech professionals.",
+    "CENTER_MARRAKECH_DESC": "Creative workspace inspired by the vibrant culture of Marrakech. Perfect for creative teams.",
+    "VIEW_SPACES": "View Spaces",
+    "VIEW_ALL_CENTERS": "View All Centers",
+    "PRICING_TAG": "Transparent Pricing",
+    "PRICING_TITLE": "Simple <span>Pricing</span>",
+    "PRICING_DESC": "No hidden fees. Choose the plan that fits your needs.",
+    "TESTIMONIALS_TAG": "Happy Members",
+    "CONTACT_TAG": "Get In Touch",
+    "CONTACT_TITLE": "Ready to Join <span>AIHub?</span>",
+    "GET_STARTED": "Get Started Free",
+    "TESTIMONIAL_1": "AIHub transformed how our team works. The spaces are beautiful and the community is incredible.",
+    "TESTIMONIAL_2": "Best coworking experience in Morocco. Fast WiFi, great coffee, and amazing networking opportunities.",
+    "TESTIMONIAL_3": "The private offices are perfect for our team. Professional environment at a very reasonable price.",
+    "ROLE_DESIGNER": "Product Designer",
+    "ROLE_FOUNDER": "Startup Founder",
+    "ROLE_TECH_LEAD": "Tech Lead",
+    "SERVICES": {
+      "OPEN_SPACE_TITLE": "Flexible Desks in Open Space",
+      "OPEN_SPACE_DESC": "Boost your productivity in our open workspace, featuring flexible workstations and an inspiring environment.",
+      "PRIVATE_OFFICE_TITLE": "Furnished Offices with Amenities",
+      "PRIVATE_OFFICE_DESC": "Enjoy a fully equipped office with furniture, high-speed internet, printing services, and communal areas.",
+      "MEETING_ROOMS_TITLE": "Conference Rooms",
+      "MEETING_ROOMS_DESC": "Utilize our state-of-the-art conference rooms equipped with the latest technology.",
+      "CAFETERIA_TITLE": "Cafeteria for Relaxation",
+      "CAFETERIA_DESC": "Take a break in our cafeteria where you can enjoy refreshments and network.",
+      "PODCAST_TITLE": "Podcast Studio",
+      "PODCAST_DESC": "Professional recording equipment for your next audio or video production.",
+      "TRAINING_TITLE": "Knowledge & Training",
+      "TRAINING_DESC": "Dedicated spaces for workshops, seminars, and professional development.",
+      "DOMICILIATION_TITLE": "Domiciliation",
+      "DOMICILIATION_DESC": "Premium business address and mail handling for your company.",
+      "INCUBATOR_TITLE": "Incubator Accelerator",
+      "INCUBATOR_DESC": "Programs and support to help your startup grow and scale rapidly."
+    },
+    "TESTIMONIALS": {
+      "TITLE": "What Our Client's Say"
+    },
+    "CONTACT": {
+      "READY_TITLE": "Ready to join the Hub?",
+      "READY_SUBTITLE": "Join the most innovative community of developers and tech enthusiasts."
+    },
+    "FOOTER": {
+      "COPYRIGHT": "© 2024 AIHub. The modern coworking space for tech & AI."
+    }
+  },
+  "PRICING": {
+    "TITLE": "Our <span>Pricing</span>",
+    "FROM": "From",
+    "PER_HOUR": "/ hour",
+    "TIERS": {
+      "OPEN_SPACE": "Open Space",
+      "PRIVATE_OFFICE": "Private Office",
+      "CONFERENCE_ROOM": "Conference Room"
+    },
+    "FEATURES": {
+      "DAY_100": "Day 100 DH",
+      "WEEK_650": "Week 650 DH",
+      "MONTH_2500": "Month 2,500 DH",
+      "YEAR_27600": "Year 27,600 DH",
+      "ACCESS_24_7": "24/7 Access",
+      "DAY_350": "Day 350 DH",
+      "WEEK_1000": "Week 1,000 DH",
+      "MONTH_4000": "Month 4,000 DH",
+      "PRIVATE_SPACE": "Private Space",
+      "DAY_400": "Day 400 DH",
+      "WEEK_2000": "Week 2,000 DH",
+      "MONTH_7000": "Month 7,000 DH",
+      "YEAR_78000": "Year 78,000 DH"
+    },
+    "RESERVE": "Book Now"
+  },
+  "BOOKING": {
+    "TITLE": "Reserve your <span>Workspace</span>",
+    "SPACE": "SPACE",
+    "CAPACITY": "CAPACITY",
+    "PEOPLE": "People",
+    "RATE": "RATE",
+    "START_DATE": "Start Date",
+    "START_TIME": "Start Time",
+    "END_DATE": "End Date",
+    "END_TIME": "End Time",
+    "TOTAL_PRICE": "Total Price",
+    "CONFIRM": "Confirm Booking",
+    "SELECT_TIME": "Select your <span>Time Slot</span>",
+    "AVAILABLE": "Available",
+    "BUSY": "Occupied",
+    "SELECTED_DURATION": "Selected Duration",
+    "DATE": "Booking Date"
+  },
+  "BOOKINGS": {
+    "TITLE": "My <span>Bookings</span>",
+    "SUBTITLE": "Manage your reservations and view your history.",
+    "NEW_BOOKING": "New Booking",
+    "PERIOD": "PERIOD",
+    "FROM": "FROM",
+    "TO": "TO",
+    "TOTAL": "TOTAL PRICE",
+    "EMPTY": "You have no bookings yet.",
+    "BROWSE": "Browse centers",
+    "LOADING": "Loading...",
+    "COL_STATUS": "Status",
+    "BTN_CANCEL": "CANCEL"
+  },
+  "CATALOGUE": {
+    "TITLE": "Discover our <span>Hubs</span>",
+    "SUBTITLE": "Explore our innovative spaces and join the community.",
+    "SEARCH_PLACEHOLDER": "Search by center name or description...",
+    "CITY_ALL": "All Cities",
+    "NO_RESULTS": "No centers found for your search.",
+    "RESERVE": "Book Now",
+    "BACK_LINK": "Back to centers",
+    "AVAILABLE_SPACES": "Available spaces",
+    "PEOPLE": "People",
+    "NO_SPACES": "No spaces configured for this center currently."
+  },
+  "AUTH": {
+    "LOGIN_TITLE": "Welcome <span>Back</span>",
+    "LOGIN_SUBTITLE": "Sign in to manage your workspace and bookings.",
+    "REGISTER_TITLE": "Create <span>Account</span>",
+    "REGISTER_SUBTITLE": "Join our community of coworkers.",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "FULL_NAME": "Full Name",
+    "HAS_ACCOUNT": "Already have an account?",
+    "NO_ACCOUNT": "Don't have an account?",
+    "SIGN_IN": "Sign In",
+    "SIGN_UP": "Sign Up",
+    "REMEMBER_ME": "Remember me",
+    "FORGOT_PASSWORD": "Forgot password?"
+  },
+  "ERRORS": {
+    "AUTH_FAILED": "Login failed. Please check your credentials.",
+    "BOOKING_CONFLICT": "This space is already booked for the selected period.",
+    "REQUIRED": "This field is required",
+    "INVALID_EMAIL": "Invalid email address",
+    "SERVER_ERROR": "A server error occurred. Please try again later."
+  },
+  "SUCCESS": {
+    "REGISTERED": "Account created successfully! You can now log in.",
+    "BOOKING_CREATED": "Booking created successfully!"
+  },
+  "STATUS": {
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "CANCELLED": "Cancelled",
+    "COMPLETED": "Completed"
+  },
+  "ADMIN": {
+    "EDIT_SPACE": "Edit Space Sections",
+    "MANAGE_GALLERY": "Manage Photos",
+    "MANAGE_AMENITIES": "Manage Amenities",
+    "SAVE_SUCCESS": "Space updated successfully",
+    "UPLOAD_HINT": "Drag & drop or click to upload photos",
+    "SECTION_INFO": "Basic Information",
+    "SECTION_PRICING": "Pricing & Capacity"
+  },
+  "REVIEW": {
+    "TITLE": "User Reviews",
+    "EMPTY": "No reviews yet. Be the first to share your experience!",
+    "SHARE_EXPERIENCE": "Share your experience",
+    "COMMENT_PLACEHOLDER": "How was your stay? (Optional)",
+    "CANCEL": "Cancel",
+    "POST": "Post Review",
+    "SUBMITTING": "Submitting...",
+    "REPORT": "Report as inappropriate",
+    "REPORT_CONFIRM": "Report this review as inappropriate?",
+    "UNDER_REVIEW": "Under review"
+  }
+}

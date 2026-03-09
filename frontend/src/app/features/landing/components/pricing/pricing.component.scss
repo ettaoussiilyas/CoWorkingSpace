@@ -1,0 +1,152 @@
+.pricing-section {
+  padding: 80px 20px;
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  width: 380px;
+  min-height: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-content {
+  padding: 40px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.tier-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.price-container {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 32px;
+
+  .from {
+    font-size: 1rem;
+    color: #94a3b8;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+  }
+
+  .unit {
+    font-size: 1rem;
+    color: #94a3b8;
+  }
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #475569;
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      color: #14b8a6; // Teal color from image
+      flex-shrink: 0;
+    }
+  }
+}
+
+.cta-button {
+  margin-top: 40px;
+  background-color: #14b8a6;
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #0d9488;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.wave-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+  }
+
+  &.first-wave {
+    bottom: -10px;
+    z-index: 2;
+    .wave-path {
+      fill: #14b8a6; // Solid teal
+      opacity: 0.6;
+    }
+  }
+
+  &.second-wave {
+    bottom: 5px;
+    z-index: 1;
+    transform: rotate(2deg);
+    .wave-path {
+      fill: #818cf8; // Light purple/indigo
+      opacity: 0.4;
+    }
+  }
+}
