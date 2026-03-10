@@ -1,4 +1,4 @@
-package com.spacehub.backend;
+package com.aihub.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
