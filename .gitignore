@@ -1,0 +1,57 @@
+# Project-specific ignores
+docs/
+word/
+generate_jira_csv.js
+*.csv
+
+# Java / Spring Boot
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/resources/architecture/
+!**/src/test/resources/architecture/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/resources/rebel.xml
+
+### VS Code ###
+.vscode/
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+.npm/
+
+# Logs
+*.log
+logs/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.local
+.env.*.local
