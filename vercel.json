@@ -1,8 +1,7 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/aihub/browser",
-  "installCommand": "npm ci",
-  "framework": "angular",
+  "buildCommand": "cd frontend && npm ci && npm run build",
+  "outputDirectory": "frontend/dist/aihub/browser",
+  "installCommand": "cd frontend && npm ci",
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/(.*\\.(js|css|ico|png|jpg|svg|json))", "dest": "/$1" },
