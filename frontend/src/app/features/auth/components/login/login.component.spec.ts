@@ -36,7 +36,7 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     const authServiceSpy = jasmine.createSpyObj('AuthService', ['login']);
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
-    const translateSpy = jasmine.createSpyObj('TranslateService', ['instant', 'use', 'setDefaultLang', 'get']);
+    const translateSpy = jasmine.createSpyObj('TranslateService', ['instant', 'use', 'setDefaultLang', 'get', 'addLangs']);
     const activatedRouteSpy = jasmine.createSpyObj('ActivatedRoute', [], { snapshot: {} });
 
     await TestBed.configureTestingModule({
@@ -163,7 +163,7 @@ describe('LoginComponent', () => {
 
       component.onSubmit();
 
-      expect(router.navigate).toHaveBeenCalledWith(['/home']);
+      expect(router.navigate).toHaveBeenCalledWith(['/']);
     });
 
     it('should set isLoading to true during login', () => {
@@ -276,7 +276,7 @@ describe('LoginComponent', () => {
       localFixture.detectChanges();
 
       const compiled = localFixture.nativeElement as HTMLElement;
-      const errorElement = compiled.querySelector('.text-red-500');
+      const errorElement = compiled.querySelector('.error-msg');
       expect(errorElement?.textContent?.trim()).toContain('Test error message');
     });
 
@@ -285,7 +285,7 @@ describe('LoginComponent', () => {
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
-      const errorElement = compiled.querySelector('.text-red-500');
+      const errorElement = compiled.querySelector('.error-msg');
 
       expect(errorElement).toBeNull();
     });
