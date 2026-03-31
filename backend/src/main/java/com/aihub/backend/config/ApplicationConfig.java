@@ -4,6 +4,9 @@ import com.aihub.backend.entity.Role;
 import com.aihub.backend.entity.User;
 import com.aihub.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +23,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
+    private static final Logger log = LoggerFactory.getLogger(ApplicationConfig.class);
+
     private final UserRepository userRepository;
+
+    @Value("${application.admin.email}")
+    private String adminEmail;
+
+    @Value("${application.admin.password}")
+    private String adminPassword;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -49,14 +60,14 @@ public class ApplicationConfig {
     @Bean
     public CommandLineRunner seedAdmin(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            if (!userRepository.existsByEmail("admin@spacehub.com")) {
+            if (!userRepository.existsByEmail(adminEmail)) {
                 userRepository.save(User.builder()
                         .fullName("Admin")
-                        .email("admin@spacehub.com")
-                        .password(passwordEncoder.encode("admin123"))
+                        .email(adminEmail)
+                        .password(passwordEncoder.encode(adminPassword))
                         .role(Role.ROLE_ADMIN)
                         .build());
-                System.out.println("[SEED] Admin user created: admin@spacehub.com / admin123");
+                log.info("[SEED] Admin user created: {}", adminEmail);
             }
         };
     }

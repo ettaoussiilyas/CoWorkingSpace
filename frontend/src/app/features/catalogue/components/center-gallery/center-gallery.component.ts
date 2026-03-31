@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgIconsModule } from '@ng-icons/core';
 import { CatalogueService } from '../../../../core/services/catalogue.service';
 import { Center } from '../../../../core/models/catalogue.models';
+import { Router } from '@angular/router';
 
 const FALLBACK_IMAGES = [
   'assets/images/centers/center-hero-casablanca.jpg',
@@ -22,9 +23,10 @@ const FALLBACK_IMAGES = [
     <div class="page">
       <!-- Page Header -->
       <div class="page-header">
+        <img src="assets/images/backgrounds/coworking.png" alt="" class="header-bg-img" />
         <div class="container">
           <span class="section-tag">Our Locations</span>
-          <h1 [innerHTML]="'CATALOGUE.TITLE' | translate"></h1>
+          <h1>{{ 'CATALOGUE.TITLE' | translate }} <span>{{ 'CATALOGUE.TITLE_HIGHLIGHT' | translate }}</span></h1>
           <p>{{ 'CATALOGUE.SUBTITLE' | translate }}</p>
         </div>
       </div>
@@ -34,15 +36,16 @@ const FALLBACK_IMAGES = [
         <div class="filters">
           <div class="search-wrap">
             <ng-icon name="lucideSearch" size="18" class="search-icon"></ng-icon>
-            <input type="text" [(ngModel)]="searchTerm"
+            <input type="text" [value]="searchTerm()" (input)="setSearch($any($event.target).value)"
               [placeholder]="'CATALOGUE.SEARCH_PLACEHOLDER' | translate"
               class="search-input" />
+            <button *ngIf="searchTerm()" class="search-clear" (click)="setSearch('')">✕</button>
           </div>
           <div class="city-filters">
-            <button class="city-btn" [class.active]="selectedCity === ''" (click)="selectedCity = ''">All Cities</button>
-            <button class="city-btn" [class.active]="selectedCity === 'Casablanca'" (click)="selectedCity = 'Casablanca'">Casablanca</button>
-            <button class="city-btn" [class.active]="selectedCity === 'Rabat'" (click)="selectedCity = 'Rabat'">Rabat</button>
-            <button class="city-btn" [class.active]="selectedCity === 'Marrakech'" (click)="selectedCity = 'Marrakech'">Marrakech</button>
+            <button class="city-btn" [class.active]="selectedCity() === ''" (click)="setCity('')">All Cities</button>
+            <button class="city-btn" [class.active]="selectedCity() === 'Casablanca'" (click)="setCity('Casablanca')">📍 Casablanca</button>
+            <button class="city-btn" [class.active]="selectedCity() === 'Rabat'" (click)="setCity('Rabat')">📍 Rabat</button>
+            <button class="city-btn" [class.active]="selectedCity() === 'Marrakech'" (click)="setCity('Marrakech')">📍 Marrakech</button>
           </div>
         </div>
 
@@ -79,7 +82,7 @@ const FALLBACK_IMAGES = [
                 <img src="assets/images/amenities/amenity-parking.svg" alt="Parking" title="Parking" />
                 <img src="assets/images/amenities/amenity-projector.svg" alt="Projector" title="Projector" />
               </div>
-              <button [routerLink]="['/centers', center.centerId]" class="btn-view">
+              <button (click)="viewSpaces(center.centerId)" class="btn-view">
                 View Spaces
                 <ng-icon name="lucideArrowRight" size="16"></ng-icon>
               </button>
@@ -93,7 +96,7 @@ const FALLBACK_IMAGES = [
             <img src="assets/images/backgrounds/empty-search.png" alt="No results" />
             <h3>{{ 'CATALOGUE.NO_RESULTS' | translate }}</h3>
             <p>Try adjusting your search or filter criteria.</p>
-            <button class="btn-reset" (click)="searchTerm = ''; selectedCity = ''">Clear Filters</button>
+            <button class="btn-reset" (click)="clearFilters()">Clear Filters</button>
           </div>
         </ng-template>
       </div>
@@ -105,19 +108,38 @@ const FALLBACK_IMAGES = [
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
     .page-header {
+      position: relative;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      padding: 80px 0 60px;
+      padding: 100px 0 80px;
       text-align: center;
-      .section-tag {
-        display: inline-block; background: rgba(20,184,166,0.15);
-        color: #5eead4; font-size: 0.8rem; font-weight: 700;
-        letter-spacing: 0.1em; text-transform: uppercase;
-        padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;
-        border: 1px solid rgba(20,184,166,0.3);
-      }
-      h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: white; margin: 0 0 16px; ::ng-deep span { color: #14b8a6; } }
-      p { color: #94a3b8; font-size: 1.1rem; }
+      overflow: hidden;
     }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(20,184,166,0.15) 0%, rgba(99,102,241,0.1) 100%);
+      opacity: 1;
+    }
+    .page-header .container {
+      position: relative;
+      z-index: 2;
+    }
+    .header-bg-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    .page-header .section-tag {
+      display: inline-block; background: rgba(20,184,166,0.15);
+      color: #5eead4; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;
+      border: 1px solid rgba(20,184,166,0.3);
+    }
+    .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: white; margin: 0 0 16px; ::ng-deep span { color: #14b8a6; } }
+    .page-header p { color: #94a3b8; font-size: 1.1rem; }
 
     .filters {
       display: flex; flex-wrap: wrap; gap: 16px;
@@ -125,14 +147,21 @@ const FALLBACK_IMAGES = [
     }
     .search-wrap {
       position: relative; flex: 1; min-width: 260px;
-      .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8; }
+      .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8; pointer-events: none; }
     }
     .search-input {
-      width: 100%; padding: 12px 16px 12px 44px;
+      width: 100%; padding: 12px 40px 12px 44px;
       border: 1.5px solid #e2e8f0; border-radius: 12px;
       font-size: 0.9rem; outline: none; background: white;
-      transition: border-color 0.2s;
-      &:focus { border-color: #14b8a6; }
+      transition: border-color 0.2s, box-shadow 0.2s;
+      &:focus { border-color: #14b8a6; box-shadow: 0 0 0 3px rgba(20,184,166,0.1); }
+    }
+    .search-clear {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.85rem;
+      width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: all 0.2s;
+      &:hover { background: #f1f5f9; color: #475569; }
     }
     .city-filters { display: flex; gap: 8px; flex-wrap: wrap; }
     .city-btn {
@@ -222,16 +251,20 @@ const FALLBACK_IMAGES = [
 })
 export class CenterGalleryComponent implements OnInit {
   private catalogueService = inject(CatalogueService);
+  private router = inject(Router);
 
   centers = signal<Center[]>([]);
-  searchTerm = '';
-  selectedCity = '';
+  searchTerm = signal('');
+  selectedCity = signal('');
 
   filteredCenters = computed(() =>
     this.centers().filter(c => {
-      const matchSearch = (c.name || '').toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                          (c.description || '').toLowerCase().includes(this.searchTerm.toLowerCase());
-      const matchCity = !this.selectedCity || c.city === this.selectedCity;
+      const q = this.searchTerm().toLowerCase();
+      const matchSearch = !q ||
+        (c.name || '').toLowerCase().includes(q) ||
+        (c.description || '').toLowerCase().includes(q) ||
+        (c.city || '').toLowerCase().includes(q);
+      const matchCity = !this.selectedCity() || c.city === this.selectedCity();
       return matchSearch && matchCity;
     })
   );
@@ -239,6 +272,12 @@ export class CenterGalleryComponent implements OnInit {
   ngOnInit(): void {
     this.catalogueService.getCenters().subscribe((data: Center[]) => this.centers.set(data));
   }
+
+  setCity(city: string) { this.selectedCity.set(city); }
+  setSearch(val: string) { this.searchTerm.set(val); }
+  clearFilters() { this.searchTerm.set(''); this.selectedCity.set(''); }
+
+  viewSpaces(centerId: number) { this.router.navigate(['/centers', centerId]); }
 
   getImage(center: Center, index: number): string {
     if (center.photos && center.photos.length > 0) return center.photos[0];

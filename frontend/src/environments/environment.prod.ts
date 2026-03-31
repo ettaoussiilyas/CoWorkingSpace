@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://co-working-space.onrender.com/api' // À remplacer par ton URL Render finale
+  apiUrl: '/api',
+  googleClientId: '957756390597-vguvqnlj9mrovo4saoqog06ev355ina6.apps.googleusercontent.com'
 };

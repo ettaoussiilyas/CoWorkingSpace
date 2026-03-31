@@ -42,6 +42,10 @@ export class AuthService {
     return localStorage.getItem('accessToken');
   }
 
+  handleGoogleAuth(response: AuthResponse): void {
+    this.handleAuthentication(response);
+  }
+
   private handleAuthentication(response: AuthResponse): void {
     const user: User = {
       fullName: response.fullName,

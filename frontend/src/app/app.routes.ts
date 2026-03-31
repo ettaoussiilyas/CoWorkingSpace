@@ -8,8 +8,10 @@ import { BookingFormComponent } from './features/booking/components/booking-form
 import { UserBookingsComponent } from './features/booking/components/user-bookings/user-bookings.component';
 import { AdminDashboardComponent } from './features/admin/pages/admin-dashboard.component';
 import { AdminSpaceEditorComponent } from './features/admin/components/space-editor/space-editor.component';
+import { CenterEditorComponent } from './features/admin/components/center-editor/center-editor.component';
 import { authGuard } from './core/guards/auth.guard';
 import { adminGuard } from './core/guards/admin.guard';
+import { userGuard } from './core/guards/user.guard';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -17,10 +19,11 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'centers', component: CenterGalleryComponent },
   { path: 'centers/:id', component: SpaceListComponent },
-  { path: 'booking/new/:spaceId', component: BookingFormComponent, canActivate: [authGuard] },
-  { path: 'my-bookings', component: UserBookingsComponent, canActivate: [authGuard] },
+  { path: 'booking/new/:spaceId', component: BookingFormComponent, canActivate: [userGuard] },
+  { path: 'my-bookings', component: UserBookingsComponent, canActivate: [userGuard] },
   { path: 'admin', component: AdminDashboardComponent, canActivate: [adminGuard] },
   { path: 'admin/spaces/new', component: AdminSpaceEditorComponent, canActivate: [adminGuard] },
   { path: 'admin/spaces/edit/:spaceId', component: AdminSpaceEditorComponent, canActivate: [adminGuard] },
+  { path: 'admin/centers/new', component: CenterEditorComponent, canActivate: [adminGuard] },
   { path: 'home', redirectTo: '', pathMatch: 'full' }
 ];

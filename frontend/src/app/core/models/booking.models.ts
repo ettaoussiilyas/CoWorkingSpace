@@ -17,9 +17,12 @@ export interface BookingResponse {
   centerName: string;
   userName: string;
   userEmail: string;
+  userPhone?: string;
   startDateTime: string;
   endDateTime: string;
   totalPrice: number;
   status: BookingStatus;
   hasReview: boolean;
+  paymentMethod?: string;
+  paymentStatus?: string;
 }

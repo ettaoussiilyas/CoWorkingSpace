@@ -1,29 +1,28 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardService } from '../../core/services/dashboard.service';
+import { AuthService } from '../../core/services/auth.service';
 import { DashboardStatsResponse } from '../../core/models/dashboard.models';
-// NgChartsModule is provided by the application module; remove local import to avoid mismatched package exports
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IconsModule } from '../../shared/icons/icons.module';
-// Icons are provided via the centralized IconsModule (imported into this standalone component)
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [CommonModule, IconsModule],
-  // icons are provided globally (centralized)
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   private statsService = inject(DashboardService);
-
-  // Using ng-icons (lucide) for icons
+  private authService = inject(AuthService);
+  private refreshInterval?: number;
 
   stats = signal<DashboardStatsResponse | null>(null);
   loading = signal(true);
+  error = signal<string | null>(null);
+  sidebarOpen = signal(true);
 
-  // Revenue Trend Chart
   public lineChartData: ChartData<'line'> = {
     datasets: [],
     labels: []
@@ -40,7 +39,6 @@ export class DashboardComponent implements OnInit {
     }
   };
 
-  // Status Distribution Chart
   public doughnutChartData: ChartData<'doughnut'> = {
     labels: [],
     datasets: []
@@ -53,7 +51,6 @@ export class DashboardComponent implements OnInit {
     }
   };
 
-  // Space Usage Chart
   public barChartData: ChartData<'bar'> = {
     labels: [],
     datasets: []
@@ -67,6 +64,19 @@ export class DashboardComponent implements OnInit {
   };
 
   ngOnInit() {
+    this.loadStats();
+    this.refreshInterval = window.setInterval(() => this.loadStats(), 60000);
+  }
+
+  ngOnDestroy() {
+    if (this.refreshInterval) {
+      clearInterval(this.refreshInterval);
+    }
+  }
+
+  loadStats() {
+    this.loading.set(true);
+    this.error.set(null);
     this.statsService.getStats().subscribe({
       next: (res) => {
         this.stats.set(res);
@@ -75,13 +85,21 @@ export class DashboardComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error fetching stats:', err);
+        this.error.set('Failed to load dashboard data. Please try again.');
         this.loading.set(false);
       }
     });
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
+  toggleSidebar() {
+    this.sidebarOpen.update(v => !v);
+  }
+
   private prepareCharts(res: DashboardStatsResponse) {
-    // Line Chart: Revenue Trend
     this.lineChartData = {
       labels: res.revenueTrend.map(d => d.label),
       datasets: [
@@ -96,7 +114,6 @@ export class DashboardComponent implements OnInit {
       ]
     };
 
-    // Doughnut Chart: Status
     this.doughnutChartData = {
       labels: res.statusDistribution.map(d => d.label),
       datasets: [
@@ -107,7 +124,6 @@ export class DashboardComponent implements OnInit {
       ]
     };
 
-    // Bar Chart: Space Usage
     this.barChartData = {
       labels: res.spaceUsage.map(d => d.label),
       datasets: [

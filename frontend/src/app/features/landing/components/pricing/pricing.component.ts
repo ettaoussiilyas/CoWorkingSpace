@@ -1,31 +1,33 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppCurrencyPipe } from '../../../../core/pipes/app-currency.pipe';
 
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule, AppCurrencyPipe],
   template: `
     <div class="pricing-grid">
       <div class="pricing-card" *ngFor="let tier of tiers" [class.popular]="tier.popular">
         <div class="popular-badge" *ngIf="tier.popular">Most Popular</div>
         <div class="card-top">
           <div class="tier-icon">{{ tier.icon }}</div>
-          <h3 class="tier-name">{{ tier.name }}</h3>
+          <h3 class="tier-name">{{ tier.nameKey | translate }}</h3>
           <div class="price-row">
-            <span class="from">from</span>
-            <span class="price">{{ tier.price }} DH</span>
-            <span class="unit">/Hour</span>
+            <span class="from">{{ 'PRICING.FROM' | translate }}</span>
+            <span class="price">{{ tier.price | appCurrency }}</span>
+            <span class="unit">{{ 'PRICING.PER_HOUR' | translate }}</span>
           </div>
         </div>
         <ul class="features">
           <li *ngFor="let f of tier.features">
             <span class="check">✓</span>
-            <span>{{ f }}</span>
+            <span>{{ f.key | translate: { price: f.price ? (f.price | appCurrency) : '', pages: f.pages || '' } }}</span>
           </li>
         </ul>
-        <button routerLink="/centers" class="cta-btn">Book Now →</button>
+        <button routerLink="/centers" class="cta-btn">{{ 'PRICING.RESERVE' | translate }} →</button>
       </div>
     </div>
   `,
@@ -144,48 +146,48 @@ export class PricingComponent {
   tiers = [
     {
       icon: '🖥️',
-      name: 'Open Space',
+      nameKey: 'PRICING.TIERS.OPEN_SPACE',
       price: 25,
       popular: false,
       features: [
-        'Furnished',
-        'Day 100 DH',
-        'Week 650 DH',
-        'Month 2,500 DH',
-        'Year 27,600 DH',
-        '20 Pages → Monthly',
-        '40% off Hot Drinks & Soda',
+        { key: 'PRICING.FEATURES.FURNISHED' },
+        { key: 'PRICING.FEATURES.DAY_PRICE', price: 100 },
+        { key: 'PRICING.FEATURES.WEEK_PRICE', price: 650 },
+        { key: 'PRICING.FEATURES.MONTH_PRICE', price: 2500 },
+        { key: 'PRICING.FEATURES.YEAR_PRICE', price: 27600 },
+        { key: 'PRICING.FEATURES.MONTH_PRINTS', pages: 20 },
+        { key: 'PRICING.FEATURES.DISCOUNT_DRINKS' }
       ]
     },
     {
       icon: '🏢',
-      name: 'Bureau Small',
+      nameKey: 'PRICING.TIERS.PRIVATE_OFFICE',
       price: 100,
       popular: true,
       features: [
-        'Furnished',
-        'Day 350 DH',
-        'Week 1,000 DH',
-        'Month 4,000 DH',
-        '8H Conference Room',
-        '40 Pages → Monthly',
-        '40% off Hot Drinks & Soda',
+        { key: 'PRICING.FEATURES.FURNISHED' },
+        { key: 'PRICING.FEATURES.DAY_PRICE', price: 350 },
+        { key: 'PRICING.FEATURES.WEEK_PRICE', price: 1000 },
+        { key: 'PRICING.FEATURES.MONTH_PRICE', price: 4000 },
+        { key: 'PRICING.FEATURES.CONF_ROOM' },
+        { key: 'PRICING.FEATURES.MONTH_PRINTS', pages: 40 },
+        { key: 'PRICING.FEATURES.DISCOUNT_DRINKS' }
       ]
     },
     {
       icon: '🏛️',
-      name: 'Bureau Standard',
+      nameKey: 'PRICING.TIERS.CONFERENCE_ROOM',
       price: 150,
       popular: false,
       features: [
-        'Furnished',
-        'Day 400 DH',
-        'Week 2,000 DH',
-        'Month 7,000 DH',
-        'Year 78,000 DH',
-        '8H Conference Room',
-        '40 Pages → Monthly',
-        '40% off Hot Drinks & Soda',
+        { key: 'PRICING.FEATURES.FURNISHED' },
+        { key: 'PRICING.FEATURES.DAY_PRICE', price: 400 },
+        { key: 'PRICING.FEATURES.WEEK_PRICE', price: 2000 },
+        { key: 'PRICING.FEATURES.MONTH_PRICE', price: 7000 },
+        { key: 'PRICING.FEATURES.YEAR_PRICE', price: 78000 },
+        { key: 'PRICING.FEATURES.CONF_ROOM' },
+        { key: 'PRICING.FEATURES.MONTH_PRINTS', pages: 40 },
+        { key: 'PRICING.FEATURES.DISCOUNT_DRINKS' }
       ]
     }
   ];

@@ -15,7 +15,6 @@ import { TranslateModule } from '@ngx-translate/core';
 
             <!-- Brand -->
             <div class="footer-brand">
-              <img src="assets/images/icons/logo-full.png" alt="AIHub" class="footer-logo" />
               <p>{{ 'LANDING.FOOTER.COPYRIGHT' | translate }}</p>
               <div class="social-links">
                 <a href="#" class="social-btn" aria-label="Twitter">

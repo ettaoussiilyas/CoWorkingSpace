@@ -22,7 +22,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
             <img src="assets/images/icons/icon-star.svg" alt="" class="badge-svg" />
             {{ 'LANDING.HERO_BADGE' | translate }}
           </div>
-          <h1 [innerHTML]="'LANDING.HERO_TITLE' | translate"></h1>
+          <h1>{{ 'LANDING.HERO_TITLE' | translate }} <span>{{ 'LANDING.HERO_TITLE_HIGHLIGHT' | translate }}</span></h1>
           <p>{{ 'LANDING.HERO_SUBTITLE' | translate }}</p>
           <div class="hero-ctas">
             <button routerLink="/centers" class="btn-primary">{{ 'LANDING.BOOK_NOW' | translate }}</button>
@@ -43,7 +43,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
         <div class="container">
           <div class="section-header">
             <span class="section-tag">{{ 'LANDING.SERVICES_TAG' | translate }}</span>
-            <h2 [innerHTML]="'LANDING.SERVICES_TITLE' | translate"></h2>
+            <h2>{{ 'LANDING.SERVICES_TITLE' | translate }} <span>{{ 'LANDING.SERVICES_TITLE_HIGHLIGHT' | translate }}</span></h2>
             <p>{{ 'LANDING.SERVICES_DESC' | translate }}</p>
           </div>
           <div class="services-grid">
@@ -63,7 +63,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
         <div class="container">
           <div class="section-header">
             <span class="section-tag">{{ 'LANDING.CENTERS_TAG' | translate }}</span>
-            <h2 [innerHTML]="'LANDING.CENTERS_TITLE' | translate"></h2>
+            <h2>{{ 'LANDING.CENTERS_TITLE' | translate }} <span>{{ 'LANDING.CENTERS_TITLE_HIGHLIGHT' | translate }}</span></h2>
             <p>{{ 'LANDING.CENTERS_DESC' | translate }}</p>
           </div>
           <div class="centers-grid">
@@ -159,7 +159,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
         <div class="container">
           <div class="section-header">
             <span class="section-tag">{{ 'LANDING.PRICING_TAG' | translate }}</span>
-            <h2 [innerHTML]="'LANDING.PRICING_TITLE' | translate"></h2>
+            <h2>{{ 'LANDING.PRICING_TITLE' | translate }} <span>{{ 'LANDING.PRICING_TITLE_HIGHLIGHT' | translate }}</span></h2>
             <p>{{ 'LANDING.PRICING_DESC' | translate }}</p>
           </div>
         </div>
@@ -171,7 +171,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
         <div class="container">
           <div class="section-header">
             <span class="section-tag">{{ 'LANDING.TESTIMONIALS_TAG' | translate }}</span>
-            <h2 [innerHTML]="'LANDING.TESTIMONIALS.TITLE' | translate"></h2>
+            <h2>{{ 'LANDING.TESTIMONIALS.TITLE' | translate }} <span>{{ 'LANDING.TESTIMONIALS.TITLE_HIGHLIGHT' | translate }}</span></h2>
           </div>
           <div class="testimonials-grid">
             <div class="testimonial-card" *ngFor="let t of testimonials; let i = index" [class.featured-testimonial]="i === 1">
@@ -197,7 +197,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
           <div class="contact-inner">
             <div class="contact-text">
               <span class="section-tag light">{{ 'LANDING.CONTACT_TAG' | translate }}</span>
-              <h2 [innerHTML]="'LANDING.CONTACT_TITLE' | translate"></h2>
+              <h2>{{ 'LANDING.CONTACT_TITLE' | translate }} <span>{{ 'LANDING.CONTACT_TITLE_HIGHLIGHT' | translate }}</span></h2>
               <p>{{ 'LANDING.CONTACT.READY_SUBTITLE' | translate }}</p>
               <div class="contact-items">
                 <div class="contact-item">

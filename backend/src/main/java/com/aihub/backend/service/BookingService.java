@@ -116,6 +116,8 @@ public class BookingService {
                 .endDateTime(booking.getEndDateTime())
                 .totalPrice(booking.getTotalPrice())
                 .status(booking.getStatus())
+                .paymentMethod(booking.getPaymentMethod())
+                .paymentStatus(booking.getPaymentStatus())
                 .hasReview(reviewRepository.existsByBookingId(booking.getId()))
                 .build();
     }

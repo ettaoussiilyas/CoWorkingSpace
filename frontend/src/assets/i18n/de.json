@@ -11,7 +11,8 @@
   },
   "LANDING": {
     "HERO_BADGE": "Die Zukunft der Arbeit",
-    "HERO_TITLE": "Arbeiten Sie smarter bei <span>AIHub</span>",
+    "HERO_TITLE": "Arbeiten Sie smarter bei",
+    "HERO_TITLE_HIGHLIGHT": "AIHub",
     "HERO_SUBTITLE": "Premium-Coworking-Spaces für Innovatoren, Kreative und Teams. Buchen Sie Ihren perfekten Arbeitsplatz noch heute.",
     "HERO_SERVICES_BTN": "Unsere Dienste",
     "STAT_MEMBERS": "Mitglieder",
@@ -19,10 +20,12 @@
     "STAT_CITIES": "Städte",
     "BOOK_NOW": "Räume Entdecken",
     "SERVICES_TAG": "Was Wir Anbieten",
-    "SERVICES_TITLE": "Unsere <span>Dienste</span>",
+    "SERVICES_TITLE": "Unsere",
+    "SERVICES_TITLE_HIGHLIGHT": "Dienste",
     "SERVICES_DESC": "Alles, was Sie zum Arbeiten, Erschaffen und Wachsen brauchen — unter einem Dach.",
     "CENTERS_TAG": "Unsere Standorte",
-    "CENTERS_TITLE": "Ausgewählte <span>Zentren</span>",
+    "CENTERS_TITLE": "Ausgewählte",
+    "CENTERS_TITLE_HIGHLIGHT": "Zentren",
     "CENTERS_DESC": "Entdecken Sie unsere Premium-Coworking-Hubs in ganz Marokko.",
     "CENTER_CASA_DESC": "Unser Flaggschiff-Zentrum im Herzen des Geschäftsviertels von Casablanca. 3 Etagen Premium-Workspace.",
     "CENTER_RABAT_DESC": "Moderner Arbeitsplatz nahe der Verwaltungshauptstadt. Ideal für Fachleute.",
@@ -30,11 +33,13 @@
     "VIEW_SPACES": "Räume Ansehen",
     "VIEW_ALL_CENTERS": "Alle Zentren Ansehen",
     "PRICING_TAG": "Transparente Preise",
-    "PRICING_TITLE": "Einfache <span>Preise</span>",
+    "PRICING_TITLE": "Einfache",
+    "PRICING_TITLE_HIGHLIGHT": "Preise",
     "PRICING_DESC": "Keine versteckten Gebühren. Wählen Sie den Plan, der zu Ihnen passt.",
     "TESTIMONIALS_TAG": "Zufriedene Mitglieder",
     "CONTACT_TAG": "Kontakt",
-    "CONTACT_TITLE": "Bereit <span>AIHub</span> beizutreten?",
+    "CONTACT_TITLE": "Bereit",
+    "CONTACT_TITLE_HIGHLIGHT": "AIHub beizutreten?",
     "GET_STARTED": "Kostenlos Starten",
     "TESTIMONIAL_1": "AIHub hat die Art und Weise, wie unser Team arbeitet, verändert. Die Räume sind wunderschön und die Community ist unglaublich.",
     "TESTIMONIAL_2": "Beste Coworking-Erfahrung in Marokko. Schnelles WLAN, großartiger Kaffee und erstaunliche Networking-Möglichkeiten.",
@@ -61,7 +66,8 @@
       "INCUBATOR_DESC": "Programme und Unterstützung, damit Ihr Startup schnell wachsen und skalieren kann."
     },
     "TESTIMONIALS": {
-      "TITLE": "Was unsere Kunden sagen"
+      "TITLE": "Was unsere",
+      "TITLE_HIGHLIGHT": "Kunden sagen"
     },
     "CONTACT": {
       "READY_TITLE": "Bereit dem Hub beizutreten?",
@@ -72,7 +78,8 @@
     }
   },
   "PRICING": {
-    "TITLE": "Unsere <span>Preise</span>",
+    "TITLE": "Unsere",
+    "TITLE_HIGHLIGHT": "Preise",
     "FROM": "Ab",
     "PER_HOUR": "/ Stunde",
     "TIERS": {
@@ -81,24 +88,22 @@
       "CONFERENCE_ROOM": "Konferenzraum"
     },
     "FEATURES": {
-      "DAY_100": "Tag 100 DH",
-      "WEEK_650": "Woche 650 DH",
-      "MONTH_2500": "Monat 2.500 DH",
-      "YEAR_27600": "Jahr 27.600 DH",
+      "DAY_PRICE": "Tag {{price}}",
+      "WEEK_PRICE": "Woche {{price}}",
+      "MONTH_PRICE": "Monat {{price}}",
+      "YEAR_PRICE": "Jahr {{price}}",
       "ACCESS_24_7": "24/7 Zugang",
-      "DAY_350": "Tag 350 DH",
-      "WEEK_1000": "Woche 1.000 DH",
-      "MONTH_4000": "Monat 4.000 DH",
       "PRIVATE_SPACE": "Privates Büro",
-      "DAY_400": "Tag 400 DH",
-      "WEEK_2000": "Woche 2.000 DH",
-      "MONTH_7000": "Monat 7.000 DH",
-      "YEAR_78000": "Jahr 78.000 DH"
+      "MONTH_PRINTS": "{{pages}} Seiten → Monatlich",
+      "DISCOUNT_DRINKS": "40% auf Heißgetränke & Soda",
+      "CONF_ROOM": "8H Konferenzraum",
+      "FURNISHED": "Möbliert"
     },
     "RESERVE": "Jetzt buchen"
   },
   "BOOKING": {
-    "TITLE": "Ihren <span>Arbeitsbereich</span> reservieren",
+    "TITLE": "Ihren",
+    "TITLE_HIGHLIGHT": "Arbeitsbereich reservieren",
     "SPACE": "RAUM",
     "CAPACITY": "KAPAZITÄT",
     "PEOPLE": "Personen",
@@ -109,14 +114,16 @@
     "END_TIME": "Endzeit",
     "TOTAL_PRICE": "Gesamtpreis",
     "CONFIRM": "Buchung Bestätigen",
-    "SELECT_TIME": "Zeitfenster <span>Wählen</span>",
+    "SELECT_TIME": "Zeitfenster",
+    "SELECT_TIME_HIGHLIGHT": "Wählen",
     "AVAILABLE": "Verfügbar",
     "BUSY": "Belegt",
     "SELECTED_DURATION": "Ausgewählte Dauer",
     "DATE": "Buchungsdatum"
   },
   "BOOKINGS": {
-    "TITLE": "Meine <span>Buchungen</span>",
+    "TITLE": "Meine",
+    "TITLE_HIGHLIGHT": "Buchungen",
     "SUBTITLE": "Verwalten Sie Ihre Reservierungen und sehen Sie Ihren Verlauf.",
     "NEW_BOOKING": "Neue Buchung",
     "PERIOD": "ZEITRAUM",
@@ -130,7 +137,8 @@
     "BTN_CANCEL": "STORNIEREN"
   },
   "CATALOGUE": {
-    "TITLE": "Entdecken Sie unsere <span>Hubs</span>",
+    "TITLE": "Entdecken Sie unsere",
+    "TITLE_HIGHLIGHT": "Hubs",
     "SUBTITLE": "Erkennen Sie unsere innovativen Räume und treten Sie der Community bei.",
     "SEARCH_PLACEHOLDER": "Suche nach Zentrum oder Beschreibung...",
     "CITY_ALL": "Alle Städte",
@@ -141,9 +149,11 @@
     "NO_SPACES": "Derzeit sind für dieses Zentrum keine Räume konfiguriert."
   },
   "AUTH": {
-    "LOGIN_TITLE": "Willkommen <span>Zurück</span>",
+    "LOGIN_TITLE": "Willkommen",
+    "LOGIN_TITLE_HIGHLIGHT": "Zurück",
     "LOGIN_SUBTITLE": "Melden Sie sich an, um Ihren Arbeitsbereich zu verwalten.",
-    "REGISTER_TITLE": "Konto <span>Erstellen</span>",
+    "REGISTER_TITLE": "Konto",
+    "REGISTER_TITLE_HIGHLIGHT": "Erstellen",
     "REGISTER_SUBTITLE": "Treten Sie unserer Coworking-Community bei.",
     "EMAIL": "E-Mail",
     "PASSWORD": "Passwort",

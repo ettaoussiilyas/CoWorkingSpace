@@ -15,9 +15,6 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
     <div class="auth-page">
       <!-- Left Panel -->
       <div class="auth-left">
-        <a routerLink="/" class="auth-logo">
-          <img src="assets/images/icons/logo-full.png" alt="AIHub" />
-        </a>
         <div class="auth-left-content">
           <div class="ai-badge">
             <img src="assets/images/icons/icon-star.svg" alt="star" class="badge-icon" />
@@ -58,7 +55,7 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
         </div>
 
         <div class="auth-form-wrap">
-          <h1 [innerHTML]="'AUTH.REGISTER_TITLE' | translate"></h1>
+          <h1>{{ 'AUTH.REGISTER_TITLE' | translate }} <span>{{ 'AUTH.REGISTER_TITLE_HIGHLIGHT' | translate }}</span></h1>
           <p class="auth-subtitle">{{ 'AUTH.REGISTER_SUBTITLE' | translate }}</p>
 
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="auth-form">

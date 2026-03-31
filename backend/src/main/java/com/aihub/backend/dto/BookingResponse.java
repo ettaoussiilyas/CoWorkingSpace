@@ -1,6 +1,7 @@
 package com.aihub.backend.dto;
 
 import com.aihub.backend.entity.BookingStatus;
+import com.aihub.backend.entity.PaymentMethod;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -19,5 +20,7 @@ public class BookingResponse {
     private LocalDateTime endDateTime;
     private BigDecimal totalPrice;
     private BookingStatus status;
+    private PaymentMethod paymentMethod;
+    private String paymentStatus;
     private boolean hasReview;
 }

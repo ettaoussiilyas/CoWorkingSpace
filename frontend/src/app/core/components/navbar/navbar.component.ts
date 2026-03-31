@@ -47,7 +47,7 @@ import { AuthService } from '../../services/auth.service';
             </ng-container>
             <ng-template #loggedIn>
               <button routerLink="/admin" *ngIf="auth.isAdmin()" class="btn-admin">⚙ Admin</button>
-              <button routerLink="/my-bookings" class="btn-login">{{ 'NAV.MY_BOOKINGS' | translate }}</button>
+              <button routerLink="/my-bookings" *ngIf="!auth.isAdmin()" class="btn-login">{{ 'NAV.MY_BOOKINGS' | translate }}</button>
               <button (click)="auth.logout()" class="btn-logout">{{ 'NAV.LOGOUT' | translate }}</button>
             </ng-template>
           </div>
@@ -73,7 +73,7 @@ import { AuthService } from '../../services/auth.service';
         </ng-container>
         <ng-template #mobileLoggedIn>
           <button routerLink="/admin" *ngIf="auth.isAdmin()" class="mobile-link" (click)="closeMenu()">⚙ Admin Panel</button>
-          <button routerLink="/my-bookings" class="mobile-link" (click)="closeMenu()">{{ 'NAV.MY_BOOKINGS' | translate }}</button>
+          <button routerLink="/my-bookings" *ngIf="!auth.isAdmin()" class="mobile-link" (click)="closeMenu()">{{ 'NAV.MY_BOOKINGS' | translate }}</button>
           <button (click)="auth.logout(); closeMenu()" class="mobile-link">{{ 'NAV.LOGOUT' | translate }}</button>
         </ng-template>
       </div>

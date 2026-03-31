@@ -39,6 +39,15 @@ public class Booking {
     @Builder.Default
     private BookingStatus status = BookingStatus.PENDING;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "payment_method", nullable = false)
+    @Builder.Default
+    private PaymentMethod paymentMethod = PaymentMethod.ON_SITE;
+
+    @Column(name = "payment_status")
+    @Builder.Default
+    private String paymentStatus = "UNPAID";
+
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 

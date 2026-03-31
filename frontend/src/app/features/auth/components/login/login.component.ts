@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
@@ -6,6 +6,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../../../../core/services/auth.service';
 import { I18nService } from '../../../../core/services/i18n.service';
 import { CurrencyService, Currency } from '../../../../core/services/currency.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../../environments/environment';
+
+declare const google: any;
 
 @Component({
   selector: 'app-login',
@@ -15,9 +19,6 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
     <div class="auth-page">
       <!-- Left Panel -->
       <div class="auth-left">
-        <a routerLink="/" class="auth-logo">
-          <img src="assets/images/icons/logo-full.png" alt="AIHub" />
-        </a>
         <div class="auth-left-content">
           <div class="ai-badge">
             <img src="assets/images/icons/icon-star.svg" alt="star" class="badge-icon" />
@@ -59,7 +60,7 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
         </div>
 
         <div class="auth-form-wrap">
-          <h1 [innerHTML]="'AUTH.LOGIN_TITLE' | translate"></h1>
+          <h1>{{ 'AUTH.LOGIN_TITLE' | translate }} <span>{{ 'AUTH.LOGIN_TITLE_HIGHLIGHT' | translate }}</span></h1>
           <p class="auth-subtitle">{{ 'AUTH.LOGIN_SUBTITLE' | translate }}</p>
 
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
@@ -92,6 +93,25 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
               <span *ngIf="isLoading" class="spinner"></span>
             </button>
           </form>
+
+          <!-- Divider -->
+          <div class="divider">
+            <span>or continue with</span>
+          </div>
+
+          <!-- Google Button -->
+          <button class="google-btn" (click)="signInWithGoogle()" [disabled]="googleLoading">
+            <ng-container *ngIf="!googleLoading">
+              <svg width="20" height="20" viewBox="0 0 48 48" style="flex-shrink:0">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+              <span>Continue with Google</span>
+            </ng-container>
+            <span *ngIf="googleLoading" class="spinner dark"></span>
+          </button>
 
           <p class="switch-auth">
             {{ 'AUTH.NO_ACCOUNT' | translate }}
@@ -197,6 +217,23 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
       a { color: #14b8a6; font-weight: 700; text-decoration: none; &:hover { text-decoration: underline; } }
     }
 
+    .divider {
+      display: flex; align-items: center; gap: 12px; margin: 24px 0 16px;
+      &::before, &::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+      span { font-size: 0.78rem; color: #94a3b8; font-weight: 600; white-space: nowrap; }
+    }
+    .google-btn {
+      width: 100%; padding: 13px 16px; border-radius: 12px;
+      background: white; border: 1.5px solid #e2e8f0;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      font-size: 0.92rem; font-weight: 700; color: #1e293b;
+      cursor: pointer; transition: all 0.2s; white-space: nowrap;
+      svg { flex-shrink: 0; width: 20px; height: 20px; }
+      &:hover:not(:disabled) { border-color: #4285F4; box-shadow: 0 4px 16px rgba(66,133,244,0.15); transform: translateY(-1px); }
+      &:disabled { opacity: 0.6; cursor: not-allowed; }
+      .spinner.dark { border-color: rgba(0,0,0,0.15); border-top-color: #4285F4; }
+    }
+
     @media (max-width: 768px) {
       .auth-page { grid-template-columns: 1fr; }
       .auth-left { display: none; }
@@ -205,11 +242,12 @@ import { CurrencyService, Currency } from '../../../../core/services/currency.se
     }
   `]
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
   private translate = inject(TranslateService);
+  private http = inject(HttpClient);
   i18n = inject(I18nService);
   currency = inject(CurrencyService);
 
@@ -219,7 +257,39 @@ export class LoginComponent {
   });
 
   isLoading = false;
+  googleLoading = false;
   errorMessage = '';
+
+  ngOnInit() {
+    if (typeof google !== 'undefined') {
+      google.accounts.id.initialize({
+        client_id: environment.googleClientId,
+        callback: (response: any) => this.handleGoogleCallback(response)
+      });
+    }
+  }
+
+  signInWithGoogle() {
+    if (typeof google !== 'undefined') {
+      google.accounts.id.prompt();
+    }
+  }
+
+  private handleGoogleCallback(response: any) {
+    this.googleLoading = true;
+    this.errorMessage = '';
+    this.http.post<any>(`${environment.apiUrl}/auth/google`, { credential: response.credential })
+      .subscribe({
+        next: (res) => {
+          this.authService.handleGoogleAuth(res);
+          this.router.navigate(['/']);
+        },
+        error: () => {
+          this.googleLoading = false;
+          this.errorMessage = 'Google sign-in failed. Please try again.';
+        }
+      });
+  }
 
   onLangChange(e: any) { this.i18n.use(e.target.value); }
   onCurrencyChange(e: any) { this.currency.setCurrency(e.target.value as Currency); }

@@ -19,7 +19,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 @RestController
 @RequestMapping("/api/bookings")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class BookingController {
 
     private final BookingService service;
@@ -50,6 +49,7 @@ public class BookingController {
         return ResponseEntity.ok(service.updateStatus(id, body.get("status")));
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     @PostMapping
     public ResponseEntity<BookingResponse> create(
             @RequestBody BookingRequest request,
@@ -58,6 +58,7 @@ public class BookingController {
         return ResponseEntity.ok(service.create(request, user.getId()));
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/my")
     public ResponseEntity<List<BookingResponse>> getMyBookings(
             @AuthenticationPrincipal User user

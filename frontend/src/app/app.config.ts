@@ -31,11 +31,9 @@ export const appConfig: ApplicationConfig = {
       useFactory: (translate: TranslateService) => {
         return () => {
           const lang = localStorage.getItem('lang') || 'en';
-          const obs = translate.use(lang);
-          if ((obs as any).toPromise) {
-            return (obs as any).toPromise();
-          }
-          return Promise.resolve();
+          return new Promise<void>(resolve => {
+            translate.use(lang).subscribe({ complete: () => resolve(), error: () => resolve() });
+          });
         };
       },
       deps: [TranslateService],

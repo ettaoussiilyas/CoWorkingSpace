@@ -57,7 +57,11 @@ class SpaceControllerIntegrationTest {
 	void setUp() {
 		spaceRepository.deleteAll();
 		centerRepository.deleteAll();
-		userRepository.deleteAll();
+		// Don't delete all users — seed admin already exists.
+		// Only delete non-seed users to avoid unique constraint on admin@test.com
+		userRepository.findAll().stream()
+				.filter(u -> !u.getEmail().equals("admin@test.com"))
+				.forEach(userRepository::delete);
 	}
 
 	@Test
@@ -81,14 +85,14 @@ class SpaceControllerIntegrationTest {
 				.centerId(center.getId())
 				.build();
 
-		// create an admin user and authenticate the request
-		User admin = User.builder()
-				.fullName("Admin")
-				.email("admin@test.com")
-				.password(passwordEncoder.encode("adminpwd"))
-				.role(Role.ROLE_ADMIN)
-				.build();
-		adminUser = userRepository.save(admin);
+		// Reuse the seeded admin user instead of creating a duplicate
+		adminUser = userRepository.findByEmail("admin@test.com")
+				.orElseGet(() -> userRepository.save(User.builder()
+						.fullName("Admin")
+						.email("admin@test.com")
+						.password(passwordEncoder.encode("adminpwd"))
+						.role(Role.ROLE_ADMIN)
+						.build()));
 
 		// Create space (authenticated as admin)
 		mockMvc.perform(post("/api/spaces")

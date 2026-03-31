@@ -11,7 +11,8 @@
   },
   "LANDING": {
     "HERO_BADGE": "The Future of Work",
-    "HERO_TITLE": "Work Smarter at <span>AIHub</span>",
+    "HERO_TITLE": "Work Smarter at",
+    "HERO_TITLE_HIGHLIGHT": "AIHub",
     "HERO_SUBTITLE": "Premium coworking spaces designed for innovators, creators, and teams. Book your perfect workspace today.",
     "HERO_SERVICES_BTN": "Our Services",
     "STAT_MEMBERS": "Members",
@@ -19,10 +20,12 @@
     "STAT_CITIES": "Cities",
     "BOOK_NOW": "Explore Spaces",
     "SERVICES_TAG": "What We Offer",
-    "SERVICES_TITLE": "Our <span>Services</span>",
+    "SERVICES_TITLE": "Our",
+    "SERVICES_TITLE_HIGHLIGHT": "Services",
     "SERVICES_DESC": "Everything you need to work, create, and grow — all under one roof.",
     "CENTERS_TAG": "Our Locations",
-    "CENTERS_TITLE": "Featured <span>Centers</span>",
+    "CENTERS_TITLE": "Featured",
+    "CENTERS_TITLE_HIGHLIGHT": "Centers",
     "CENTERS_DESC": "Discover our premium coworking hubs across Morocco.",
     "CENTER_CASA_DESC": "Our flagship center in the heart of Casablanca's business district. 3 floors of premium workspace.",
     "CENTER_RABAT_DESC": "Modern workspace near the administrative capital. Ideal for government and tech professionals.",
@@ -30,11 +33,13 @@
     "VIEW_SPACES": "View Spaces",
     "VIEW_ALL_CENTERS": "View All Centers",
     "PRICING_TAG": "Transparent Pricing",
-    "PRICING_TITLE": "Simple <span>Pricing</span>",
+    "PRICING_TITLE": "Simple",
+    "PRICING_TITLE_HIGHLIGHT": "Pricing",
     "PRICING_DESC": "No hidden fees. Choose the plan that fits your needs.",
     "TESTIMONIALS_TAG": "Happy Members",
     "CONTACT_TAG": "Get In Touch",
-    "CONTACT_TITLE": "Ready to Join <span>AIHub?</span>",
+    "CONTACT_TITLE": "Ready to Join",
+    "CONTACT_TITLE_HIGHLIGHT": "AIHub?",
     "GET_STARTED": "Get Started Free",
     "TESTIMONIAL_1": "AIHub transformed how our team works. The spaces are beautiful and the community is incredible.",
     "TESTIMONIAL_2": "Best coworking experience in Morocco. Fast WiFi, great coffee, and amazing networking opportunities.",
@@ -61,7 +66,8 @@
       "INCUBATOR_DESC": "Programs and support to help your startup grow and scale rapidly."
     },
     "TESTIMONIALS": {
-      "TITLE": "What Our Client's Say"
+      "TITLE": "What Our",
+      "TITLE_HIGHLIGHT": "Clients Say"
     },
     "CONTACT": {
       "READY_TITLE": "Ready to join the Hub?",
@@ -72,7 +78,8 @@
     }
   },
   "PRICING": {
-    "TITLE": "Our <span>Pricing</span>",
+    "TITLE": "Our",
+    "TITLE_HIGHLIGHT": "Pricing",
     "FROM": "From",
     "PER_HOUR": "/ hour",
     "TIERS": {
@@ -81,24 +88,22 @@
       "CONFERENCE_ROOM": "Conference Room"
     },
     "FEATURES": {
-      "DAY_100": "Day 100 DH",
-      "WEEK_650": "Week 650 DH",
-      "MONTH_2500": "Month 2,500 DH",
-      "YEAR_27600": "Year 27,600 DH",
+      "DAY_PRICE": "Day {{price}}",
+      "WEEK_PRICE": "Week {{price}}",
+      "MONTH_PRICE": "Month {{price}}",
+      "YEAR_PRICE": "Year {{price}}",
       "ACCESS_24_7": "24/7 Access",
-      "DAY_350": "Day 350 DH",
-      "WEEK_1000": "Week 1,000 DH",
-      "MONTH_4000": "Month 4,000 DH",
       "PRIVATE_SPACE": "Private Space",
-      "DAY_400": "Day 400 DH",
-      "WEEK_2000": "Week 2,000 DH",
-      "MONTH_7000": "Month 7,000 DH",
-      "YEAR_78000": "Year 78,000 DH"
+      "MONTH_PRINTS": "{{pages}} Pages → Monthly",
+      "DISCOUNT_DRINKS": "40% off Hot Drinks & Soda",
+      "CONF_ROOM": "8H Conference Room",
+      "FURNISHED": "Furnished"
     },
     "RESERVE": "Book Now"
   },
   "BOOKING": {
-    "TITLE": "Reserve your <span>Workspace</span>",
+    "TITLE": "Reserve your",
+    "TITLE_HIGHLIGHT": "Workspace",
     "SPACE": "SPACE",
     "CAPACITY": "CAPACITY",
     "PEOPLE": "People",
@@ -109,14 +114,16 @@
     "END_TIME": "End Time",
     "TOTAL_PRICE": "Total Price",
     "CONFIRM": "Confirm Booking",
-    "SELECT_TIME": "Select your <span>Time Slot</span>",
+    "SELECT_TIME": "Select your",
+    "SELECT_TIME_HIGHLIGHT": "Time Slot",
     "AVAILABLE": "Available",
     "BUSY": "Occupied",
     "SELECTED_DURATION": "Selected Duration",
     "DATE": "Booking Date"
   },
   "BOOKINGS": {
-    "TITLE": "My <span>Bookings</span>",
+    "TITLE": "My",
+    "TITLE_HIGHLIGHT": "Bookings",
     "SUBTITLE": "Manage your reservations and view your history.",
     "NEW_BOOKING": "New Booking",
     "PERIOD": "PERIOD",
@@ -130,7 +137,8 @@
     "BTN_CANCEL": "CANCEL"
   },
   "CATALOGUE": {
-    "TITLE": "Discover our <span>Hubs</span>",
+    "TITLE": "Discover our",
+    "TITLE_HIGHLIGHT": "Hubs",
     "SUBTITLE": "Explore our innovative spaces and join the community.",
     "SEARCH_PLACEHOLDER": "Search by center name or description...",
     "CITY_ALL": "All Cities",
@@ -142,9 +150,11 @@
     "NO_SPACES": "No spaces configured for this center currently."
   },
   "AUTH": {
-    "LOGIN_TITLE": "Welcome <span>Back</span>",
+    "LOGIN_TITLE": "Welcome",
+    "LOGIN_TITLE_HIGHLIGHT": "Back",
     "LOGIN_SUBTITLE": "Sign in to manage your workspace and bookings.",
-    "REGISTER_TITLE": "Create <span>Account</span>",
+    "REGISTER_TITLE": "Create",
+    "REGISTER_TITLE_HIGHLIGHT": "Account",
     "REGISTER_SUBTITLE": "Join our community of coworkers.",
     "EMAIL": "Email",
     "PASSWORD": "Password",
