@@ -11,11 +11,12 @@ import { BookingResponse, BookingStatus } from '../../../core/models/booking.mod
 import { Center, Space } from '../../../core/models/catalogue.models';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+import { AdminCalendarComponent } from '../components/booking-calendar/booking-calendar.component';
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, TranslateModule, AppCurrencyPipe],
+  imports: [CommonModule, RouterModule, FormsModule, TranslateModule, AppCurrencyPipe, AdminCalendarComponent],
   template: `
     <div class="admin-page">
 
@@ -39,16 +40,24 @@ import { environment } from '../../../../environments/environment';
         <!-- Tab Nav -->
         <div class="tab-nav">
           <button class="tab-btn" [class.active]="activeTab() === 'stats'" (click)="activeTab.set('stats')">
-            <img src="assets/images/icons/icon-star.svg" alt="" /> Stats
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Stats
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'bookings'" (click)="activeTab.set('bookings'); loadBookings()">
-            <img src="assets/images/icons/icon-booking.svg" alt="" /> Bookings
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Bookings
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'spaces'" (click)="activeTab.set('spaces'); loadSpaces()">
-            <img src="assets/images/icons/icon-calendar.svg" alt="" /> Spaces
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Spaces
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'centers'" (click)="activeTab.set('centers'); loadCenters()">
-            <img src="assets/images/icons/icon-map-pin.svg" alt="" /> Centers
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Centers
+          </button>
+          <button class="tab-btn" [class.active]="activeTab() === 'calendar'" (click)="activeTab.set('calendar')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/></svg>
+            Calendar
           </button>
         </div>
 
@@ -253,6 +262,11 @@ import { environment } from '../../../../environments/environment';
           </div>
         </div>
 
+        <!-- CALENDAR TAB -->
+        <div *ngIf="activeTab() === 'calendar'">
+          <app-admin-calendar></app-admin-calendar>
+        </div>
+
         <!-- BOOKINGS TAB -->
         <div *ngIf="activeTab() === 'bookings'">
           <div class="section-toolbar">
@@ -432,9 +446,9 @@ import { environment } from '../../../../environments/environment';
     .tab-btn {
       display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 10px;
       border: none; background: none; color: #64748b; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;
-      img { width: 16px; height: 16px; opacity: 0.5; }
-      &:hover { background: #f8fafc; color: #1e293b; }
-      &.active { background: #0f172a; color: white; img { filter: invert(1); opacity: 0.8; } }
+      svg { flex-shrink: 0; stroke: currentColor; }
+      &:hover { background: #f8fafc; color: #14b8a6; }
+      &.active { background: #0f172a; color: white; }
     }
 
     /* STATS SKELETON */
@@ -670,7 +684,7 @@ export class AdminDashboardComponent implements OnInit {
   private http = inject(HttpClient);
 
   today = new Date();
-  activeTab = signal<'stats' | 'bookings' | 'spaces' | 'centers'>('stats');
+  activeTab = signal<'stats' | 'bookings' | 'spaces' | 'centers' | 'calendar'>('stats');
   bookings = signal<BookingResponse[]>([]);
   spaces = signal<Space[]>([]);
   centers = signal<Center[]>([]);

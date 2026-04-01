@@ -122,11 +122,11 @@ import { TranslateModule } from '@ngx-translate/core';
     .contact-row {
       display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #475569;
     }
-    .contact-icon { width: 16px; height: 16px; filter: invert(1); opacity: 0.4; flex-shrink: 0; }
+    .contact-icon { width: 16px; height: 16px; filter: invert(52%) sepia(98%) saturate(400%) hue-rotate(130deg); opacity: 0.7; flex-shrink: 0; }
 
     .amenities-row {
       display: flex; gap: 10px;
-      img { width: 24px; height: 24px; opacity: 0.3; filter: invert(1); transition: opacity 0.2s; &:hover { opacity: 0.7; } }
+      img { width: 24px; height: 24px; opacity: 0.5; filter: invert(52%) sepia(98%) saturate(400%) hue-rotate(130deg); transition: opacity 0.2s; &:hover { opacity: 1; } }
     }
 
     .footer-bottom {

@@ -24,4 +24,7 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
     );
 
     List<Booking> findByUserIdOrderByCreatedAtDesc(Long userId);
+
+    @Query("SELECT b FROM Booking b WHERE YEAR(b.startDateTime) = :year AND MONTH(b.startDateTime) = :month ORDER BY b.startDateTime ASC")
+    List<Booking> findByYearAndMonth(@Param("year") int year, @Param("month") int month);
 }

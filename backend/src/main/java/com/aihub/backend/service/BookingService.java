@@ -91,6 +91,12 @@ public class BookingService {
                 .collect(Collectors.toList());
     }
 
+    public List<BookingResponse> getBookingsByMonth(int year, int month) {
+        return repository.findByYearAndMonth(year, month).stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+
     @Transactional
     public BookingResponse updateStatus(Long id, String status) {
         Booking booking = repository.findById(id)

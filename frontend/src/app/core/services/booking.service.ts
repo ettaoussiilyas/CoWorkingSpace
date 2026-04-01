@@ -21,6 +21,24 @@ export class BookingService {
     return this.http.get<BookingResponse[]>(`${this.apiUrl}/bookings/all`);
   }
 
+  getBookingsByMonth(year: number, month: number): Observable<BookingResponse[]> {
+    return this.http.get<BookingResponse[]>(`${this.apiUrl}/bookings/month?year=${year}&month=${month}`);
+  }
+
+  exportMonthCsv(year: number, month: number): void {
+    const url = `${this.apiUrl}/bookings/export?year=${year}&month=${month}`;
+    const token = localStorage.getItem('accessToken');
+    fetch(url, { headers: { Authorization: `Bearer ${token}` } })
+      .then(r => r.blob())
+      .then(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `spacehub-bookings-${year}-${month}.csv`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+  }
+
   updateBookingStatus(id: number, status: string): Observable<BookingResponse> {
     return this.http.patch<BookingResponse>(`${this.apiUrl}/bookings/${id}/status`, { status });
   }
